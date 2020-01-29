@@ -3,7 +3,6 @@
 This is a simple project that shows the usage of Next.js with TypeScript.
 Built in using:
 - next
-- prop-types
 - react
 - react-dom
 - react-styled-flexboxgrid
