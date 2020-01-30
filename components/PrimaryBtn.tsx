@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InvertedBtn = styled.button`
+export const PrimaryBtn = styled.button`
     width: 100%;
     margin-bottom: 0.75em;
     margin-right: 0.25em;
@@ -17,14 +17,14 @@ export const InvertedBtn = styled.button`
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     box-shadow: 0 0 0 2px #0855f4 inset!important;
-    color: #0855f4!important;
-    background: transparent none!important;
+    color: #ffffff!important;
+    background: #0855f4 none!important;
     font-weight: 500;
     font-size: 12px;
     border-radius: 3px;
 
     &:hover {
-        background: #0855f4 none !important;
-        color: #ffffff!important;
+        background: transparent none !important;
+        color: #0855f4!important;
     }
 `;

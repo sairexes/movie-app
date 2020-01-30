@@ -17,7 +17,7 @@ const BackBtnStyled = styled.button`
     color: #fff !important;
     background: #0855f4 !important;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 3px;
     position: relative;
     padding-left: 25px;
 

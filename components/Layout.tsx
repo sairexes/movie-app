@@ -4,6 +4,7 @@ import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
+    font-family: "Open Sans", sans-serif;
     background: #f3f7fe;
     max-width: 90%;
     margin: 0 auto;
@@ -24,6 +25,7 @@ const Layout: React.FunctionComponent<Props> = ({
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"></link>
     </Head>
     <GlobalStyle/>
       {children}
