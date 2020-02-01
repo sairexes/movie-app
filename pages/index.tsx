@@ -16,9 +16,25 @@ const IndexPage: NextPage<Props> = ({
   movie,
   related
 }) => {
+  const [fave, setFave ] = React.useState(false);
+
+  React.useEffect(()=>{
+    if ( fave !== JSON.parse( localStorage.getItem('faved') || 'false' ) ) {
+      setFave( JSON.parse( localStorage.getItem('faved') || 'false' ) );
+    }
+  }, [] )
+
+  React.useEffect(()=>{
+    localStorage.setItem('faved', JSON.stringify(fave));
+  }, [fave] )
+
+  const onFavorite = () => {
+    setFave( !fave );
+  }
+
   return (
     <Layout title="Movie App">
-        <InfoHeader movie={movie}></InfoHeader>
+        <InfoHeader movie={movie} onFav={onFavorite} favorite={fave}></InfoHeader>
         <SearchSection></SearchSection>
         <DetailsSection movie={movie}></DetailsSection>
         <RelatedSection movies={related}></RelatedSection>

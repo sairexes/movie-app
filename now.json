@@ -1,5 +1,5 @@
 {
-    "name": "now-env-vars",
+    "name": "movie-app",
     "version": 2,
     "builds": [{ 
         "src": "package.json", 

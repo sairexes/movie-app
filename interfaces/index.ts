@@ -14,3 +14,5 @@ export type Movie = {
   description?:string
   poster?:string
 }
+
+export type VoidFunc = () => void
