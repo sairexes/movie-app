@@ -8,6 +8,10 @@ Built in using:
 - react-styled-flexboxgrid
 - styled-components
 
+## Pre-setup
+- get own tmdb auth key [here](https://www.themoviedb.org/) 
+- add `TMDB_API_KEY` to `.env` file
+
 ## How to use it?
 - clone repo
 - Run `yarn install` to install packages

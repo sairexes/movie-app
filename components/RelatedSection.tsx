@@ -44,7 +44,7 @@ const DetailsSection: React.FunctionComponent<Props> = ({
         <h2>Related Videos</h2>
         <Row>
                 {movies.map( movie => (
-                    <Col xs={5} sm={5} md={2} lg={2}>
+                    <Col key={movie.id} xs={5} sm={5} md={2} lg={2}>
                         <ListCard title={movie.original_title} path={`${TMDB_IMG_POSTER_URL}${movie.poster_path}`}></ListCard>
                     </Col>
                 ))}
