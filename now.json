@@ -1,0 +1,16 @@
+{
+    "name": "now-env-vars",
+    "version": 2,
+    "builds": [{ 
+        "src": "package.json", 
+        "use": "@now/next"
+    }],
+    "env": {
+        "TMDB_API_KEY" : "@tmdb-api-key"
+    },
+    "build": {
+        "env": {
+            "TMDB_API_KEY" : "@tmdb-api-key"
+        }
+    }
+}

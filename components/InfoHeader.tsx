@@ -3,8 +3,9 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import { CircularAvatar } from './CircularAvatar'
 import { TitleHeader } from './TitleHeader'
 import { InvertedBtn } from './InvertedBtn'
-import { sampleMovieData } from './../utils/sample-data'
 import styled from 'styled-components'
+import { Movie } from '../interfaces'
+import { TMDB_IMG_BASE_URL } from '../utils/constants'
 
 const InfoHeaderWrapper = styled.div`
     border-bottom: 2px solid #c8defd;
@@ -13,15 +14,19 @@ const InfoHeaderWrapper = styled.div`
     & >div>div {
         margin-bottom: 10px;
     }
+
+    svg {
+        fill: #7FA7F7;
+        cursor: pointer;
+    }
 `;
 
 type Props = {
-  title?: string,
-  path?: string
+  movie: Movie
 }
 
 const InfoHeader: React.FunctionComponent<Props> = ({
-    title
+    movie
 }) => (
   <React.Fragment>
     <InfoHeaderWrapper>
@@ -30,10 +35,10 @@ const InfoHeader: React.FunctionComponent<Props> = ({
                 <Row middle="xs">
                     <React.Fragment>
                         <Col>
-                            <CircularAvatar src={`${sampleMovieData[0].poster}`}></CircularAvatar>
+                            <CircularAvatar src={`${TMDB_IMG_BASE_URL}${movie.backdrop_path}`}></CircularAvatar>
                         </Col>
                         <Col>
-                            <TitleHeader>{ title }</TitleHeader>
+                            <TitleHeader>{ movie.original_title }</TitleHeader>
                         </Col>
                         <Col>
                             <svg height="24px" width="24px" viewBox="0 -10 511.99143 511" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +65,6 @@ const InfoHeader: React.FunctionComponent<Props> = ({
             </Col>
       </Row>
     </InfoHeaderWrapper>
-      
   </React.Fragment>
 )
 

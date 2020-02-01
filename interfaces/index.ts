@@ -5,8 +5,12 @@
 // import User from 'path/to/interfaces';
 
 export type Movie = {
-  id: number
-  title: string
-  description: string
-  poster: string
+  id?: number
+  original_title?: string
+  overview?: string
+  poster_path?: string
+  backdrop_path?: string
+  title?:string
+  description?:string
+  poster?:string
 }

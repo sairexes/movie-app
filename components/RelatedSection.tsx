@@ -2,9 +2,10 @@ import * as React from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { ThemeProvider } from 'styled-components'
 import ListCard from './ListCard'
-import { sampleMovieData } from '../utils/sample-data'
 import { PrimaryBtn } from './PrimaryBtn'
 import styled from 'styled-components'
+import { Movie } from '../interfaces'
+import { TMDB_IMG_POSTER_URL } from '../utils/constants'
 
 const ViewAllWrapper = styled.div`
     margin-top:20px;
@@ -32,19 +33,19 @@ const theme = {
 };
 
 type Props = {
-    description?:string,
-    path?:string
+    movies: Movie[]
 }
 
 const DetailsSection: React.FunctionComponent<Props> = ({
+    movies
 }) => (
   <React.Fragment>
       <ThemeProvider theme={theme}>
         <h2>Related Videos</h2>
         <Row>
-                {sampleMovieData.map( movie => (
+                {movies.map( movie => (
                     <Col xs={5} sm={5} md={2} lg={2}>
-                        <ListCard title={movie.title} path={movie.poster}></ListCard>
+                        <ListCard title={movie.original_title} path={`${TMDB_IMG_POSTER_URL}${movie.poster_path}`}></ListCard>
                     </Col>
                 ))}
         </Row>
