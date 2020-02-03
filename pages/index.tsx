@@ -17,11 +17,16 @@ const IndexPage: NextPage<Props> = ({
   related
 }) => {
   const [fave, setFave ] = React.useState(false);
+  const [loading, setLoading ] = React.useState(true);
 
   React.useEffect(()=>{
     if ( fave !== JSON.parse( localStorage.getItem('faved') || 'false' ) ) {
       setFave( JSON.parse( localStorage.getItem('faved') || 'false' ) );
     }
+
+    setTimeout(() => {
+      setLoading(!loading)
+    }, 3000);
   }, [] )
 
   React.useEffect(()=>{
@@ -34,10 +39,10 @@ const IndexPage: NextPage<Props> = ({
 
   return (
     <Layout title="Movie App">
-        <InfoHeader movie={movie} onFav={onFavorite} favorite={fave}></InfoHeader>
+        <InfoHeader movie={movie} onFav={onFavorite} favorite={fave} loading={loading}></InfoHeader>
         <SearchSection></SearchSection>
-        <DetailsSection movie={movie}></DetailsSection>
-        <RelatedSection movies={related}></RelatedSection>
+        <DetailsSection movie={movie} loading={loading}></DetailsSection>
+        <RelatedSection movies={related} loading={loading}></RelatedSection>
     </Layout>
   )
 }
