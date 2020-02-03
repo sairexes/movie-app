@@ -17,7 +17,7 @@ const DetailsSection: React.FunctionComponent<Props> = ({
   <React.Fragment>
       <h2>Synopsis</h2>
       <Row>
-            <Col xs={12} sm={12} md={9} lg={9}>
+            <Col style={{margin:"15px 0px"}} xs={12} sm={12} md={9} lg={9}>
                 { loading ? (
                     <LoadingParagraph numberOfBars={40}></LoadingParagraph>  
                 ) : (
